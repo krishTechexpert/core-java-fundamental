@@ -3,7 +3,7 @@
 //static varaible
 //local varaible
 
-class LocalVaraibleWithAccessSpecifier {
+class LocalVaraibleWithAccessSpecifier_11 {
   int p1=10; // default modifier
   static int p2=20; //default modifier
  // if we are not declare any modifer then by default it will be default modifier but the rule is applicable for instance and static varaible but not for local varaible
@@ -38,7 +38,7 @@ class LocalVaraibleWithAccessSpecifier {
 
 
      final int x=10;//10
-     //System.out.println(y); // error can not fins symbol 
+     //System.out.println(y); // error can not find symbol 
      //y is only accessible inside test method it is local varaible
 
      //the only applicable  modifier for local varaible is final.
