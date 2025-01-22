@@ -1,13 +1,5 @@
 import java.lang.reflect.*;
 
-class Student{
-  public String getName(){
-    return null;
-  }
-  public int getMarks(){
-    return 10;
-  }
-}
 
 class Test{
   public static void main(String[] args) throws Exception{

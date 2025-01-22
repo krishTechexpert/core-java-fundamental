@@ -7,14 +7,12 @@ class LocalVaraibleWithAccessSpecifier_11 {
   int p1=10; // default modifier
   static int p2=20; //default modifier
  // if we are not declare any modifer then by default it will be default modifier but the rule is applicable for instance and static varaible but not for local varaible
-
+// which is accesible only in same package
   int [] x;
   int [] z= new int[3];
   void test(){
     final int y=20;
     int p1=30; // p1 is local varaible so there is no default modifier for local varaible
-
-
   }
 
   public static void main(String[] args){
@@ -24,11 +22,12 @@ class LocalVaraibleWithAccessSpecifier_11 {
     // static int x=10;
     // transient int x=10;
     // volatile int x=10;
-    //above 6 method give complie time error all these are local varaible with access modifier inside main which is not accepted only final is accepted as local varaible so all 6 these should be class level varaible
+    //above 6 method give complie time error all these are local varaible with
+      // access modifier inside main which is not accepted only final is accepted as local varaible so all 6 these should be class level varaible
 
     // scope of local varaible is fixed inside method which are not access outside the method 
 
-      LocalVaraibleWithAccessSpecifier t =new LocalVaraibleWithAccessSpecifier();
+      LocalVaraibleWithAccessSpecifier_11 t =new LocalVaraibleWithAccessSpecifier_11();
       System.out.println(t.x);//null default value will provided by jvm
       //System.out.println(t.x[0]); //error: null pointer exception
 
