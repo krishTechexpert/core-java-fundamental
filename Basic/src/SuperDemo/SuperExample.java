@@ -1,6 +1,6 @@
 package SuperDemo;
 
-class Student {
+ class Student {
     String name;
     String course;
     int rollNo;
