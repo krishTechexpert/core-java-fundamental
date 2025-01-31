@@ -69,7 +69,7 @@ public class demo {
 
        //Animal a = new Animal(); // java: Abstraction.Animal is abstract; cannot be instantiated
         // Creating a Dog object
-        Animal dog = new Dog("Buddy"); // Dispatch binding
+        Animal dog = new Dog("Buddy"); // Dispatch binding good approach
         // work well b'coz Parent class can contain reference of child class
         // we already study
         //Dog dog = new Dog("bullDog");
