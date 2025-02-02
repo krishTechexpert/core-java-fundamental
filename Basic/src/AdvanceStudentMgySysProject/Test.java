@@ -168,6 +168,9 @@ class SchoolManagementSystem {
 
 public class Test {
     public static void main(String[] args) {
+        int arr[] = {1,2,3,'a','b'};// array can contain only integer and char value and char will be converted automatically into int.
+        System.out.println(arr[1]);//2
+        System.out.println(arr[3]);// 97
 
        Student std1 =  new Student("krish",20);
        std1.addCourse("HTML");
