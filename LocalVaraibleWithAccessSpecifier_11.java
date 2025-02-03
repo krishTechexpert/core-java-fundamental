@@ -23,7 +23,8 @@ class LocalVaraibleWithAccessSpecifier_11 {
     // transient int x=10;
     // volatile int x=10;
     //above 6 method give complie time error all these are local varaible with
-      // access modifier inside main which is not accepted only final is accepted as local varaible so all 6 these should be class level varaible
+      // access modifier inside main which is not accepted only final is accepted
+      // as local varaible so all 6 these should be class level varaible
 
     // scope of local varaible is fixed inside method which are not access outside the method 
 
@@ -50,15 +51,20 @@ class LocalVaraibleWithAccessSpecifier_11 {
 
 
      // summary & conclusion
-     //for instance and static varaible, jvm will provide default values and we are not required to perform initialization explicitly
+     //for instance and static varaible, jvm will provide default values and
+      // we are not required to perform initialization explicitly
 
-     //but for local varaible jvm will not provide any default value so it will be compulsary to initialization explicitly before using the varaibles
+     //but for local varaible jvm will not provide any default value
+      // so it will be compulsary to initialization explicitly before using the varaibles
 
-     // instance and static varaible can be accessed by multiple threads simultaneously and hence these are not thread safe.
+     // instance and static varaible can be accessed by multiple threads simultaneously and
+      // hence these are not thread safe.
 
-     //but in case of local varaible, for every thread, a sepearate copy will be created so local varaible is thread safe.
+     //but in case of local varaible, for every thread,
+      // a sepearate copy will be created so local varaible is thread safe.
 
       //Array
-     // once we create an Array every array element by default initailization will be default value respective of wheather it is instance array or static array or local array
+     // once we create an Array every array element by default initailization will be default value
+      // respective of wheather it is instance array or static array or local array
   }
 }

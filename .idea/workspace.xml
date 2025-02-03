@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b30e4908-d1f5-4937-a8dd-ce41b6bf65c0" name="Changes" comment="IntelliJ Idea installed" />
+    <list default="true" id="b30e4908-d1f5-4937-a8dd-ce41b6bf65c0" name="Changes" comment="IntelliJ Idea installed">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,54 +22,54 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "history": [
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
     {
-      "state": "OPEN",
-      "author": "krishTechexpert"
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;author&quot;: &quot;krishTechexpert&quot;
     },
     {
-      "author": "krishTechexpert"
+      &quot;author&quot;: &quot;krishTechexpert&quot;
     }
   ],
-  "lastFilter": {
-    "author": "krishTechexpert"
+  &quot;lastFilter&quot;: {
+    &quot;author&quot;: &quot;krishTechexpert&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/krishTechexpert/core-java-fundamental.git",
-    "accountId": "779ec1aa-23fe-4781-9bf2-db05d7eee4b8"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/krishTechexpert/core-java-fundamental.git&quot;,
+    &quot;accountId&quot;: &quot;779ec1aa-23fe-4781-9bf2-db05d7eee4b8&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2rzYieSvgN3Y9stMCXFvOQCBBOW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.CommandLineArgs_15.executor": "Run",
-    "Application.LocalVaraibleWithAccessSpecifier_11.executor": "Run",
-    "Application.StaticBlock.executor": "Run",
-    "Application.SuperDemo (1).executor": "Run",
-    "Application.SuperDemo (2).executor": "Run",
-    "Application.SuperDemo (3).executor": "Run",
-    "Application.SuperDemo.executor": "Run",
-    "Application.Test.executor": "Run",
-    "Application.TestReturnArray.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/krishna/code-25/core-java-fundamental"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.CommandLineArgs_15.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LocalVaraibleWithAccessSpecifier_11.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StaticBlock.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SuperDemo (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.SuperDemo (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.SuperDemo (3).executor&quot;: &quot;Run&quot;,
+    &quot;Application.SuperDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestReturnArray.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/krishna/code-25/core-java-fundamental&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -76,7 +78,7 @@
       <recent name="$PROJECT_DIR$/SuperConcept" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SuperDemo (5)">
+  <component name="RunManager">
     <configuration name="SuperDemo (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SuperDemo" />
       <module name="core-java-fundamental" />

@@ -11,9 +11,10 @@ class TestReturnArray{
   }
   public static void main(String[] args){
       int arr[]={10,20,30,40,50};
-      System.out.println("Before array:"+Arrays.toString(arr));
-      int total = sumArray(arr);
-      System.out.println("Final total is "+total);
-      System.out.println("Array after manipulation: "+Arrays.toString(arr));
+      System.out.println("Before array:"+Arrays.toString(arr));//Before array:[10, 20, 30, 40, 50]
+      int total = sumArray(arr);//call by reference
+      System.out.println("Final total is "+total); // 150
+      System.out.println("Array after manipulation: "+Arrays.toString(arr)); //Array after manipulation: [100, 200, 300, 400, 500]
+
   }
 }
