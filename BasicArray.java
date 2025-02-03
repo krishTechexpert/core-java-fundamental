@@ -1,9 +1,9 @@
 class BasicArray{
   
   public static void main(String[] args){
-    // first way
-    int num[] = new int[5];
-  num[0]=10;
+    // first way to define array
+    int num[] = new int[5]; // declaration
+  num[0]=10;//instantiation
   num[1]=20;
   num[2]=30;
   num[3]=40;
@@ -13,7 +13,7 @@ class BasicArray{
   }
 
   //second way
-  int arr[]={100,200,300,400,500};//declaration, instantiation and initialization
+  int arr[]={100,200,300,400,500};//declaration, instantiation and initialization together
   for(int i=0;i<arr.length;i++){
     System.out.println(arr[i]);
   }

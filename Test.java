@@ -1,5 +1,5 @@
 import java.lang.reflect.*;
-
+// to calculate how many class present in java.lang.String package //148 class
 
 class Test{
   public static void main(String[] args) throws Exception{

@@ -6,7 +6,8 @@ class InstanceBlock{
   }
   // instance block
   {
-    // this will be run  when object is create but before run any constructor that'w why it will be showing before default constructor
+    // this will be run  when object is create but
+      // before run any constructor that'w why it will be showing before default constructor
     System.out.println("Instance block");
   }
   // default constructor

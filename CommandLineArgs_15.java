@@ -10,7 +10,9 @@ class CommandLineArgs_15{
   //   System.out.println(sum); //46
   // }
 //example-2
-//internally jym create like that String[] arr = {'6','10','30'} which will be passed into main Method as command line args inside String[] args so args contains array of string such as arr
+//internally jym create like that String[] arr = {'6','10','30'}
+// which will be passed into main Method as command line args
+// inside String[] args so args contains array of string such as arr
 
   public static void main(String[] args){
     int sum=0;

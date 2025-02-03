@@ -7,7 +7,7 @@
 
   }
 }
-
+// we can define multiple class in single .java file but each class have generate sepearte .byte class
 class A{
 
 }

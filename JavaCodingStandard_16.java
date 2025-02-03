@@ -8,7 +8,7 @@ class JavaCodingStandard_16{
 }
 
 //1.) first define package like format package com.durgasoft.auth(module name)
-//2.) class name always public with pasacl case with meaning full name
+//2.) class name always public with pascal case with meaning full name
 //3.) m1 is instance method but we are not using any instance varaible insdie m1 so in that case
 // public int m1(int x,int y){
 //     return x+y // local varaible
