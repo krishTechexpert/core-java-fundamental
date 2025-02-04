@@ -4,7 +4,7 @@ import java.util.*;
 * In Java, cursors are used to iterate over elements in a Collection.
 * Java provides three main types of cursors:
 
-Enumeration (Legacy cursor, only for Vector and Stack)
+Enumeration (Legacy cursor, only for Vector and Stack,Hashtable)
 Iterator (Universal cursor, works with all Collections)
 ListIterator (Bidirectional cursor, works only for Lists)
 * these 3 are interface.
