@@ -33,6 +33,17 @@ Use ArrayList when you need fast access O(1) and dynamic resizing.
 Use LinkedList when frequent insertions/deletions are required.
 Use Vector when thread safety is needed.
 * */
+
+/*
+* 3. How ArrayList Expands When Full
+* default capacity =10;
+If you keep adding elements and exceed the current capacity, ArrayList will grow automatically.
+The new capacity is calculated as:
+
+newCapacity = oldCapacity + (oldCapacity / 2);
+Which means it increases by 50% every time it needs more space.
+
+* */
 public class ListDemo {
     public static void main(String[] args) {
         // Creating an ArrayList
