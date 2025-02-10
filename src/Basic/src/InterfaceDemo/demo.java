@@ -3,7 +3,7 @@ package InterfaceDemo;
 //Vehicle interface that defines common behaviors for different types of vehicles.
 
 // by default , method are public and abstract inside interface;
-// by defauly , varaible/member are public static final inside interface;
+// by default , varaible/member are public static final inside interface;
 // class extends class
 //class implements A,B,C
 //interface extends interface A,Interface B
@@ -11,7 +11,7 @@ package InterfaceDemo;
 //but different-2 vehicle apny hisaab sy funcationality add ker sekty hai
 //to achieve 100% abstraction
 //interface ka object nhi bnata hai
-// interface support multiple inheritance so no ambiguity error
+// interface support multiple inheritance so no ambiguity error and to solve diamond problem in java, we used interface
 //It can be used to achieve loose coupling. [no dependency to other]
 
 /*
