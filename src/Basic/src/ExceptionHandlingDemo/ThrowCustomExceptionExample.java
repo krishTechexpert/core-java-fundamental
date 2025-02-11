@@ -24,6 +24,7 @@ class CheckAdharCardAgeException extends Exception{
 public class ThrowCustomExceptionExample {
     public static void validateAge(int age) throws CheckAdharCardAgeException{
         if(age< 18) {
+            //throw new RuntimeException("Age must be 18 or above to vote\"")//without custom exception
             throw new CheckAdharCardAgeException("Age must be 18 or above to vote");
         }
         System.out.println("Age is valid. you can vote");
