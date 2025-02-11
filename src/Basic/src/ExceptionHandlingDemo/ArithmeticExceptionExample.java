@@ -1,4 +1,10 @@
 package ExceptionHandlingDemo;
+/*
+order of exception is matter like
+child first then parent..
+exception should be in the last
+we can put parent exception,runtimeexception first , then Arithmatic etc..not allowed give error
+ */
 
 public class ArithmeticExceptionExample extends Throwable {
 

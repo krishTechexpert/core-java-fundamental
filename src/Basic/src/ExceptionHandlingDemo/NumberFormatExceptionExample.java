@@ -12,7 +12,16 @@ public class NumberFormatExceptionExample {
         try{
             int num = Integer.parseInt(str); // Attempting to parse a non-numeric string to an integer
             System.out.println("Parsed Number = "+num);
-        }catch(NumberFormatException e) {
+        }
+        /* this order give error java: exception java.lang.NumberFormatException has already been caught
+        so put exception in the last ti fixed error
+        catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+        catch(NumberFormatException e) {
+            System.out.println(e.getMessage());
+        }*/
+        catch(NumberFormatException e) {
             System.out.println(e.getMessage());
         }
     }
