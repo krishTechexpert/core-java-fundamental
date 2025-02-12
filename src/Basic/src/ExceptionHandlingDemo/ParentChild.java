@@ -3,7 +3,7 @@ package Basic.src.ExceptionHandlingDemo;
 // But if child class has raised exception then Parent class need to  manadatory  handle exception
 class Parent{
     //public void m1() throws Exception {
-
+    final int a=10;
     public void m1()  {
         System.out.println("Parent m1");
     }
