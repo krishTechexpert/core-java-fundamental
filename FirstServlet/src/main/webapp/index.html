@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Servlet | intro</title>
+</head>
+<body>
+<main>
+    <h1>Hello My First servlet</h1>
+    <h2>Notes:</h2>
+    <p>we will create java directory inside main. As it not provides any java directory</p>
+    <p>web.xml files called deployment descriptor and it is very very very important file</p>
+    <h3>we need servlet-api.jar file sothat we can used Generic and other servlet class</h3>
+    <p>1. we will do manually add .jar file such we add mysql-connector.jar file</p>
+    <p>2. if you don't manually then try to used maven and add dependency inside pom.xml (recommend approach)</p>
+    <h1>Some project directory explain: </h1>
+    <h4>lib directory contains all .jar files </h4>
+    <h4>bin contains catalina.sh file</h4>
+    <h4>webapps: tomcat run time per .class file ko complie kerky es webapps m rekh deta hai and waha sy deployment kerta hai internally</h4>
+    <hr>
+    <h2>Some imp points:</h2>
+    <p>servlet ka code aapko jakarta.servlet m milega and jakarta comes from tomcat</p>
+    <p>java does not contain any servlet code, all servelt code provided by tomcat</p>
+    <p>Jesy, jdbc k interface written in java but servelt k interface jakarta s atai hai which is written in java , and jakarta tomcat provide kaarata hai</p>
+    <hr>
+
+    <h2>smart tomcat plugin need to download</h2>
+    <p>way-1.)for downloading,go to settings for intelliJIdea and select plugin and search smart tomact then installed</p>
+    <p>shortcut way-2: press 2 times shifft key and find plugin</p>
+    <p>
+        <p>After installing, click on current file and edit configuration and click on '+' icon </p>
+        <p>add tomcat server location : /opt/tomcat11 and apply and ok</p>
+        <p>now you can run your first servlet programme by clicking on play button </p>
+        <p> when our java programe complied then it will put .class file inside webapp and deployed from there. </p>
+        <p><strong>http://localhost:8082</strong>, this is the home page which is run successfully <br>
+            <strong>but abi tak yha per servelt ka role nhi aya hai because homepage is just static html file there is no bussiness logic that servlet runs</strong></p>
+        <h2>it will make build successfully and create target directory which contains class file such as .FirstServletDemo
+        <p>and put this inside pom.xml file
+            <build>
+                <finalName>FirstServlet</finalName>
+            </build>
+        </p>
+        </h2>
+
+    <p>But when we hit any endpoints such as (/first) then it will not work because we need to do mapping
+           <br> this url give error: HTTP Status 404 – Not Found
+           <br> so we need to mapping our servlet inside web.xml file and then check http://localhost:8082/first work well (now you can check web.xml file) we mapped that now
+        </p>
+    </p>
+
+    <h2>Catalina: is a servlet container inside Tomcat which is also responsible to manage life cycle of servlet
+        <br> and to call servlet means(to call servlet endpoints like /products,/users)</h2>
+    <hr>
+    <p>Deployment descriptor ko describe kro inside web.xml file, ki kon si servlet kha per padi hai </p>
+    <p><!--in web.xml file such as
+        <br><servlet>
+            <servlet-name>FirstServletDemo</servlet-name>
+            <servlet-class>FirstServletDemo</servlet-class>
+        </servlet>-->
+
+        <!-- Servlet URL Mapping -->
+        <!-- servlet first check url-pattern  means kis url endpoints s call hoga servlet -->
+        <!--<servlet-mapping>
+            <servlet-name>FirstServletDemo</servlet-name>
+            <url-pattern>/first</url-pattern>
+        </servlet-mapping>-->
+    </p>
+<h2>when we hit /first then how it work/communicate ?</h2>
+  <ul>
+      <li>when client hit endpoints such as /first then our request sent to server (tomcat)</li>
+      <l1>now server contains two component: 1.main server and 2.container(Catalina)<br>
+          <br>first request comes to main server (which check request is static or dynamic)
+          <br>if request is static (like index.html) then main server handle itself and
+          <p>1. main server (which serve static page) so we can say main server is responsible to run http://localhost:8082/ and return home page to client </p>
+          <hr>
+          <h2>Imp points:</h2>
+          <p>2. container which manage servlet (contains bussiness logic) and is responsibe to handle endpoints such type of /first which will retrun some response to client</p>
+            <p>Let us describe it brief</p>
+          if request is dynamic then main server forward request to container (Catalina) and continer check web.xml file and find mapping /first which points to (FirstServletDemo) web component and return it to main server and main server return to it client(browser)
+      </l1>
+      <li>
+          <h2>if endpoints(/posts) does not exists then what will happen ?</h2>
+      <p>
+          same theory:we consider it is dynamic request,
+          client send request to main server and which forward to container and container check web.xml file
+          and try to find url pattern mapping for /posts endpoints, which does not exists then it return 404 error to
+          main server and main server return that error to client.
+      </p>
+      </li>
+  </ul>
+</main>
+</body>
+</html>
