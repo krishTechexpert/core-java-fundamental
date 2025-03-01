@@ -5,7 +5,7 @@ import jakarta.servlet.ServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
+//jakarta.servlet (previously javax.servlet in servlet 5.0 version k baad change)
 public class FirstServletDemo  extends GenericServlet {
     @Override
     public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
