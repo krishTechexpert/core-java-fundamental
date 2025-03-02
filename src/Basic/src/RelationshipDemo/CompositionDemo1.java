@@ -12,7 +12,12 @@ Let's break it down simply:
 🔹 Contained Object → The object inside the container class that it depends on.
 
 
+*In other words, Composition is a restricted form of Aggregration in which two entities are
+* highly dependent on each other. and it represent part-of relationship.
+* when there is a composition between two entities, the composed object can not exist without the other entity.
+*If we say every student k pass address hona zaruri hai then it is strict(tightly) Aggreagration known as Association
 *
+* In project, It depends on client requirement, he want Aggragration or Association in project requirement
 *
 🔹 Key Characteristics of Composition:
 

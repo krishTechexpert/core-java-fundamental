@@ -10,6 +10,10 @@ Aggregation is a HAS-A relationship in Java, where one class contains an object 
 * class Student{
 * private Address adres;// Aggregation (HAS-A Relationship)
 * }
+* student k pass address ho bi sekta hai or nhi bi ho sekta hai, agar student move in new city , may be chance student k pass address nhi ho
+* but address k liye zarori hai student ka hona ,it shows one way relationship
+*
+*
 🔹 Key Points:
 
 Weak Association – The contained object can exist without the container.
