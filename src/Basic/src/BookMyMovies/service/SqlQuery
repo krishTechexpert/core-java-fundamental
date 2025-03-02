@@ -107,7 +107,7 @@ insert into seat(show_id,seat_number,is_booked) values
 (17,'J1',FALSE),(17,'J2',FALSE),(17,'J3',FALSE),(17,'J4',FALSE),(17,'J5',FALSE),
 (18,'K1',FALSE),(18,'K2',FALSE),(18,'K3',FALSE),(18,'K4',FALSE),(18,'K5',FALSE),
 (19,'L1',FALSE),(19,'L2',FALSE),(19,'L3',FALSE),(19,'L4',FALSE),(19,'L5',FALSE),
-(20,'M1',FALSE),(20,'M2',FALSE),(20,'M3',FALSE),(20,'M4',FALSE),(20,'M5',FALSE);
+(20,'Coupling.M1',FALSE),(20,'M2',FALSE),(20,'M3',FALSE),(20,'M4',FALSE),(20,'M5',FALSE);
 
 
 insert into bookings(user_id,show_id,seats_booked,total_price) values
