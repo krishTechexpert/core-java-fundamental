@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="helloWorldID" class="org.example.HelloWorld"> <!-- package fullPath.className-->
+        <property name="message" value="Hello World Spring!"/>
+    </bean>
+</beans>
+
+
+<!--
+ 📝 Explanation
+Defines a Spring Bean (<bean>) with id="helloWorldID" and class org.example.HelloWorld(className).
+The <property> tag injects the value "Hello Spring!" into the message variable using setter injection.
+This file tells Spring how to create and configure objects.
+
+ -->
