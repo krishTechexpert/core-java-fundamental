@@ -9,6 +9,7 @@
 * 4. Class should have Zero-param constructor
 *
 * Note: Bean classes are used to write bussiness logic, store and reterive data from database.
+* spring m jo bi object bnata hai usko java beans kehty hai and
 *
 * *
 * */
