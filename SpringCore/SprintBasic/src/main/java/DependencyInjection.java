@@ -13,5 +13,6 @@
 *   c.) field injection
 * */
 
+// we already make lot of demo about DI . please check it DI folder in Basic
 public class DependencyInjection {
 }
