@@ -3,6 +3,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!-- bean defination -->
     <bean id="helloWorldID" class="org.example.HelloWorld"> <!-- package fullPath.className-->
         <property name="message" value="Hello World Spring!"/>
     </bean>

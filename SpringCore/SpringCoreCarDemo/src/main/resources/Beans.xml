@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="kseriesId" class="org.example.KSeries"> <!-- KSeries class ka object create hoga , then us object ko represent krengy kseriesId sy  -->
+<!--and we can say that sprint framework KSeries object bnayae ga or IOC per registered ker dega then IOC k kesy pata chelga
+        then IOC xml file ko read krega and find bean Id-->
+    </bean>
+
+    <!--ab kseries ky object ko insert kra do class Car m engine variable k ander -->
+    <bean id="car" class="org.example.Car">
+        <!-- if you want to call setter method setEngine of Car  then used property tag-->
+         <!--<property name="engine" ref="kseriesId"/>-->
+
+        <!--engine varaible of Engine such as private Engine engine-->
+
+     <!--But if you want to inject by using constructor then used contructor-arg tag -->
+        <constructor-arg name="engine" ref="kseriesId" />
+    </bean>
+
+
+
+
+</beans>
