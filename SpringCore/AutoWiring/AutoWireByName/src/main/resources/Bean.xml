@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="engine" class="org.example.Engine" /> <!-- Bean ID/ Bean Name must match the property name such as private Engine engine -->
+    <!-- first engine ka object bnage in heap that's why output show Engine instance created -->
+
+    <!-- same engine name give ambiguity error, try other name
+    <bean name="engine" class="org.example.Engine" /> -->
+
+    <bean id="carBean" class="org.example.Car" autowire="byName" />
+    <!--Now second Car ka object bnega and  car k ander engine bean object ko inject ker dega by type name -->
+</beans>
+
+<!--
+ Spring will inject the engine bean into the engine property of Car.
+ This works only if the property name in Car is also engine.
+
+ -->
