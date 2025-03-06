@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <!-- Prototype Scoped Bean -->
+    <bean id="studentBean" class="org.example.Student" scope="prototype" />
+
+    <!-- Define Factory Bean -->
+    <bean id="studentFactoryID" class="org.example.StudentFactory"/>
+
+
+    <!-- Singleton Service Bean (Using Factory to Get Prototype Beans) -->
+    <bean id="studentService" class="org.example.StudentService">
+        <constructor-arg  ref="studentFactoryID"/> <!-- Injecting StudentFactory -->
+    </bean>
+
+<!--
+✅ Here, ref="studentFactoryID" means that the StudentService constructor will
+receive the StudentFactory instance.
+
+3️⃣ How Spring Injects Dependencies
+Spring sees <constructor-arg ref="studentFactoryID"/>
+It finds the studentFactoryID bean and injects it into StudentService
+When we call displayStudent(), StudentService will use StudentFactory to create new Student instances.
+
+
+ -->
+
+</beans>
