@@ -6,8 +6,8 @@
 *   3. Dependency Injection means creating bean and injection bean into target bean classes in spring application.
 *
 *   we have 2 IOC Container:
-*   1.) Bean Factory (outdated)
-*   2.) ApplicationContext (Recommended) we will learn this
+*   1.) Bean Factory (outdated): it will follow lazy loading that means when we request then only it will create bean object
+*   2.) ApplicationContext (Recommended) we will learn this: it is also known as eager loading in which it will create bean object automatically
 *
 *
 * Note; IOC Container will manage life cycle os spring beans
@@ -59,8 +59,8 @@
             <!-- bean definitions here -->
 
         </beans>
-    5. create main class and start IOC container such as
-        ApplicationContext ap=new new ClassPathXmlApplicationContext("bean.xml"); //IOC reads bean.xml, creates beans, and injects dependencies.
+    5. create main class and start IOC container such as any name.xml
+        ApplicationContext ap=new new ClassPathXmlApplicationContext("beans.xml"); //IOC reads bean.xml, creates beans, and injects dependencies.
 
         Car car = ap.getBean(Car.class)
 * */
