@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <!-- first bean object kseries ka bangega-->
+    <bean id="KengineBean" class="org.example.KSeries"  />
+
+    <!-- second bean object Mhawk ka bangega-->
+    <bean id="mhawkEngine"  class="org.example.MHawk" autowire-candidate="false"/>
+
+    <!-- third bean object Car ka bangega-->
+    <bean id="carBean" class="org.example.Car" autowire="byType" />
+
+    <!--
+ ✅ Here, autowire="byType" means:
+
+Spring will look for a bean of type Engine and inject it into Car automatically.
+Since engineBean is of type Engine, it will be injected into Car.
+
+ -->
+
+    <!-- Problem
+      it will give ambugity error
+* because two object KengineBean,mhawkEngine is of same type Engine . check solution see Test.java
+
+      -->
+
+</beans>
+
