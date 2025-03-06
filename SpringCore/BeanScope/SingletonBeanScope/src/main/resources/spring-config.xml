@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define MessageService Bean (Default: Singleton) you can add/remove scope="singleton" because it is default nature -->
+    <bean id="msgServiceId" class="org.example.MessageService"  />
+
+    <!-- Define MessagePrinter Bean (Singleton) and Inject Dependency -->
+    <bean id="msgPrintId" class="org.example.MessagePrinter" scope="singleton">
+        <constructor-arg name="messageService" ref="msgServiceId" /> <!-- messageService is the instance member of private MessageService messageService; -->
+    </bean>
+
+</beans>
