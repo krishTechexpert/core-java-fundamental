@@ -18,6 +18,12 @@
 *
 * 6.) web socket scope: it is new introduced with version sprint 4.0
  *
+ *
+ * Which Scope to Use?
+Use singleton for shared components.
+Use prototype for independent instances.
+Use request/session/application for web-based applications.
+*
 * */
 
 public class BeanScope {
