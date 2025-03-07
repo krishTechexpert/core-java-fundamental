@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <!-- Engine Bean (Prototype Scope) -->
+    <bean id="engineBean" class="org.example.Engine" scope="prototype"/>
+
+    <!-- Car Bean (Singleton) with Lookup Method -->
+
+    <bean id="carBean" class="org.example.CarImpl">
+        <lookup-method name="getEngine" bean="engineBean"/>
+    </bean>
+
+</beans>
+<!--
+ ✅ The key part here is <lookup-method>, which tells Spring to override the getEngine()
+ method in CarImpl and return a new Engine instance every time.
+
+
+ -->

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!-- Engine Bean (Prototype Scope) -->
+    <bean id="engineBean" class="org.example.Engine" scope="prototype"/>
+    <!-- scope prototype means jitni bar enginebean ko called krogy, utni bar new engine object create kroga simple -->
+
+    <!-- Car Bean (Singleton) -->
+    <!-- Car need to inject engine -->
+    <bean id="carBean" class="org.example.Car">
+        <constructor-arg  ref="engineBean"/>
+    </bean>
+</beans>
+
+<!--
+ ✅ engineBean is defined as a prototype.
+✅ carBean is a singleton, and it gets the engineBean instance during bean creation.
+ -->
