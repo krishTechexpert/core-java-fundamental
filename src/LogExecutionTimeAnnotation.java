@@ -32,6 +32,7 @@ Use Case: Validate fields in a Java class.
 @Retention(RetentionPolicy.RUNTIME)
 //es LogExecutionTime annotation ko class k sath used kerna hai,ya phir method k sath used kerna hai etc.
 @Target(ElementType.METHOD)
+@FunctionalInterface
  @interface LogExecutionTime{ // i want to used this on readdata method
     /*
     * Why is @interface LogExecutionTime {} Empty?
