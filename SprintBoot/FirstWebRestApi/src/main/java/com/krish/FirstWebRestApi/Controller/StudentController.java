@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/student") // resource [protocol/domain/resourse/resource-Id like http://krish.com/student/getAll
-
+                            // when we make any crud request then it will first hit  resource(@RequestMapping("/student"))
 //1.) this StudentController (Student.java) class interact with Student service (StudentService.java)
 public class StudentController {
 
