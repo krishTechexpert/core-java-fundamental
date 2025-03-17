@@ -47,12 +47,30 @@ So, mappedBy = "department" ensures that the Department table does not have a
 * foreign key column and instead the foreign key (department_id) is stored
 * in the Employee table, which is the correct approach! 🚀
 
+*
+* */
 
+//------------------------------------------------
 
+/*
+* 1️⃣ What Happens Without Cascade?
+If we do not use cascade = CascadeType.ALL, we need to manually save and delete
+* employees when performing operations on the department.
 
+* 2️⃣ What Happens With cascade = CascadeType.ALL?
+By adding cascade = CascadeType.ALL, any operation on Department will also apply
+* to its associated Employees.
 
+✅ Now, Hibernate Handles Everything Automatically
 
+* Delete Scenario:
+departmentRepo.deleteById(1L); // ✅ Deletes the department and all related employees
 
+    * Without Cascade: Employees would remain in the database.
+
+    With Cascade: Employees linked to the department will be deleted automatically.
+
+    It ensures child records (employees) are deleted when the parent (department) is deleted.
 
 *
 * */
