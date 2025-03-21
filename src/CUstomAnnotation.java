@@ -114,7 +114,6 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-import java.lang.reflect.Method;
 
 
 @Retention(RetentionPolicy.RUNTIME)  // Annotation is available at runtime
@@ -122,15 +121,15 @@ import java.lang.reflect.Method;
 //es annotation ko class k sath used kerna hai,ya phir method k sath used kerna hai etc
 @Target(ElementType.TYPE)   //it means class level per lga sekty hai annotation // annotation can only be applied to classes, interfaces, or enums.
 
-@interface MyAnnotation {
+@interface MyAnnotation1 {
    String value();  // This is an element inside the annotation
     //it is an method but inside annotation it treat as parameter
 }
 
-@MyAnnotation("Custom Annotation")// yha per class k sath used ker rehy hai
-public class CustomAnnotation {
+@MyAnnotation1("Custom Annotation")// yha per class k sath used ker rehy hai
+public class CUstomAnnotation {
     public static void main(String[] args) throws Exception {
-        Class<CustomAnnotation> obj = CustomAnnotation.class;
+        Class<CUstomAnnotation> obj = CUstomAnnotation.class;
 
         // Check if the class has @MyAnnotation
         if (obj.isAnnotationPresent(MyAnnotation.class)) {

@@ -11,7 +11,7 @@ public class Programe1 {
         //abc->3
         //String newStr=""; it will get new memory on each append in String contstant pool
         StringBuilder newStr = new StringBuilder();
-        for(int i=0;i<len;i++){ // O(n) , not O(n2) b'coz loop only runs for string lemgth
+        for(int i=0;i<len;i++){ // O(n) , not O(n2) b'coz loop only runs for string length
             // loop chelga for i=0,i=3,i=5,i=8;
             System.out.println("i="+i);
             Integer count=1;
