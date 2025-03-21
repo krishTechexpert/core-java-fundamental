@@ -32,8 +32,8 @@ Use Case: Validate fields in a Java class.
 @Retention(RetentionPolicy.RUNTIME)
 //es LogExecutionTime annotation ko class k sath used kerna hai,ya phir method k sath used kerna hai etc.
 @Target(ElementType.METHOD)
-@FunctionalInterface
- @interface LogExecutionTime{ // i want to used this on readdata method
+//@FunctionalInterface
+ @interface LogEXecutionTime{ // i want to used this on readdata method
     /*
     * Why is @interface LogExecutionTime {} Empty?
 Your custom annotation @LogExecutionTime is empty because it only serves as a marker.
@@ -54,11 +54,11 @@ It is used to indicate that something special should be done, without needing an
     * */
 }
 
-public class LogExecutionTimeAnnotation {
+public class LogExecutionTimeAnnotation1 {
     public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        DBOPeration db=new DBOPeration();
-        Method method=DBOPeration.class.getMethod("readdata");
-        if(method.isAnnotationPresent(LogExecutionTime.class)){
+        DBOPeration1 db=new DBOPeration1();
+        Method method=DBOPeration1.class.getMethod("readdata");
+        if(method.isAnnotationPresent(LogEXecutionTime.class)){
           long startTime = System.currentTimeMillis();
           method.invoke(db);
           long endTime = System.currentTimeMillis();
@@ -67,8 +67,8 @@ public class LogExecutionTimeAnnotation {
     }
 }
 
-class DBOPeration{
-    @LogExecutionTime()
+class DBOPeration1{
+    @LogEXecutionTime()
     public void readdata() throws InterruptedException {
         Thread.sleep(2000);
         System.out.println("Task Completed!");
