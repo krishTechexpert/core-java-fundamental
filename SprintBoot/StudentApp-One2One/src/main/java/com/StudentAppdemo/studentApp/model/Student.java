@@ -75,8 +75,37 @@ allocationSize = 1 → Increments one step at a time.
 
     * */
 
+
     // save the child ref(address table data) before saving the parent reference(student table)
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL) //Applies all operations such as persist, remove, update
+     /*
+     The cascade property in JPA (Java Persistence API)
+    determines how operations on a parent entity should be propagated to
+    its related child entities.
+-----------------------------------------------
+
+     * It means any operation (like persist, remove, update, etc.)
+     performed on the Student entity will also be applied to the Address entity.
+
+    ❌ But if you try to save an Address separately, it won’t save Student automatically.
+        Address address = new Address("123 Main St");
+        entityManager.persist(address);  // ❌ This will NOT save Student
+------------------------------------------------------
+
+
+     Scenario	                                Cascade Type
+    Save parent → Save child automatically	    PERSIST
+    Update parent → Update child automatically	MERGE
+    Delete parent → Delete child automatically	REMOVE
+    Refresh parent → Refresh child from DB	    REFRESH
+    Remove parent from persistence context → Remove child too	DETACH
+    Apply all above rules together	            ALL
+
+
+
+      * */
+
+
     @JoinColumn(name="address_id") // change column name
     private Address address;// first it will save address data into address table then new student record created.
 
