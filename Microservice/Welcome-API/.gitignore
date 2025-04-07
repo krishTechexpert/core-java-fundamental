@@ -32,5 +32,3 @@ build/
 ### VS Code ###
 .vscode/
 
-# Ignore Zipkin server folder
-Microservice/zipkin-server-3.5.0-exec/
