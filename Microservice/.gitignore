@@ -1,7 +1,7 @@
 
 # Ignore Zipkin server folder
-/zipkin-server-3.5.0-exec/
+/zipkin-server-3.5.0-exec.jar
 
 
 # Ignore Zipkin server folder
-Microservice/zipkin-server-3.5.0-exec/
+Microservice/zipkin-server-3.5.0-exec.jar
