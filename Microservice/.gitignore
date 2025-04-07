@@ -1,0 +1,3 @@
+
+# Ignore Zipkin server folder
+/zipkin-server-3.5.0-exec/
