@@ -199,11 +199,14 @@ add this anontation @EnableFeignClients
 // feign client , discovery server s pochega ki do you have Greet API Microservice
 then it will return the url of greet API MS ka
 
+No need to create load balancer,because we used Feign client which take care of load
+balancer as well.
+
 ✅ Why OpenFeign is Better than RestTemplate
 1. Service Discovery Support
 Works easily with Eureka. You can just provide the service name.
 
-@FeignClient(name = "greet-service")
+@FeignClient(name = "GREET-API")
 public interface GreetClient {
     @GetMapping("/greet")
     String getGreetMessage();
@@ -231,3 +234,126 @@ Spring Cloud Integration	❌ Manual	✅ Tight integration
 
 *
 * */
+
+/*
+
+Ribbion and Load balancer:
+
+suppose welcome api running 1 instance on 8081 and
+Greet api running on 3 instance. such as port 9090,9091,9092
+
+now when welcome communicate with greet api by feign client then it will first ask
+from discovery server, hay have you greet ms , if yes then it will return
+result as url of 3 instance of greet api.
+and feign client got confused . which instance I have to call it .
+
+then Ribbon comes into picture..
+
+feign client asks from  ribbon , what I have to do of  3 url of greet api,
+and comunicate to each other to help of Load balancer
+
+then load balancer further sent to request to each specific port to such as 9090,9091,9092
+
+No need to create load balancer,because we used Feign client which take care of load
+balancer as well.
+
+Microservice part 1 one end here.
+---------------------------------------------------------
+*/
+
+// ------------ Microservice part 2 start  handle load balance---------------------
+
+ /* In Microservice part 2 start here in which we learn how Greet-api MS runs
+ on different-2 port such as 9090,9091,9092
+
+     and also learn for api gateway filtering and environment
+
+     By Using Environment varaible we can check which port number greet-api runs.
+    * 1.)
+    * suppose we want to check which port number running for greet-api without specify
+    * port in application.properties files such as server.port = server.port=9090
+    * then first make it server.port=9090 disabled it and used
+    * private Environment env;
+    -----------------------------------------------
+    2.)
+    Now we will create jar file of greet-api by using maven
+
+    click on maven icon -> Lifecycle ->
+    select clean and install and play/click green run button
+    then you will find under target -> Greet-API-0.0.1-SNAPSHOT.jar
+    --------------------------------------------
+    3.) start discovery server, admin server,zipkin, welcome api
+    and check in discovery server it is showing in it.
+        http://localhost:8761/
+        http://localhost:1111/applications
+        http://localhost:9411/zipkin/
+        welcome api is listed here.
+        http://localhost:8081/welcome
+
+    4.) now go to cmd
+Microservice/Greet-API/target$ java -jar Greet-API-0.0.1-SNAPSHOT.jar --server.port=9091
+successfully run on cmd console and you will see message like:
+2025-04-13T20:10:52.722+05:30  INFO
+[Greet-API,67fbccf462d5fe1d62fcb639c8be9147,62fcb639c8be9147] 85495 ---
+[Greet-API] [nio-9091-exec-9] [67fbccf462d5fe1d62fcb639c8be9147-62fcb639c8be9147] 4
+c.k.G.controller.GreetController         : inside greetMsg method in Greet api
+running on port= 9091
+
+http://localhost:9091/greet
+Good Morning , I am from Greet-API MS 9091
+
+till now everytjing is working fine
+
+---------------------------------------------------------
+
+5.) now try to greet-api run on  on 9092 and 9093 port as well
+
+Microservice/Greet-API/target$ java -jar Greet-API-0.0.1-SNAPSHOT.jar --server.port=9092
+http://localhost:9092/greet
+Good Morning , I am from Greet-API MS 9092
+
+
+Microservice/Greet-API/target$ java -jar Greet-API-0.0.1-SNAPSHOT.jar --server.port=9090
+http://localhost:9090/greet
+Good Morning , I am from Greet-API MS 9090
+
+Now till now 3 instance of greet-api MS run on different -2 port
+we acheived that till now.
+-------------------------------------------------
+
+6.) Now we will see magic of load balancing..
+
+open postman/or run in browser and run/hit multiple times: http://localhost:8081/welcome
+same url on different port it will take help from Eurika
+then you will see that load balancing manage automatically when ou hit single /welcome
+Good Morning , I am from Greet-API MS 9091 Hi, I am from Welcome API
+Good Morning , I am from Greet-API MS 9090 Hi, I am from Welcome API
+Good Morning , I am from Greet-API MS 9092 Hi, I am from Welcome API
+------------ End here --------------
+* */
+
+/** Let see how load balance manage without feign client
+ *
+ * like banking,enterprise,product based company don't like to used open source tool
+ * so y company apny hi internal algorithm likty hai
+ *  so wsee hi y load balance ko implement kerny k liye , in api gateway ko apni
+ *  algorithm d deta hai suppose
+ *
+ *  if api gateway check if request is coming from more than 3 then it will used
+ *  modolus (%) opeartor ka used kerky each instance ko index assign ker deta hai
+ *  such as 0,1,2
+ *
+ *  when hit first request, 0%3=0 (index) means runs 9090 instance
+ *  when hit second request, 1%3=1 (index) means runs 9091 instance
+ *  when hit third request, 2%3=2 (index) means runs 9092 instance
+ *
+ *  again when hit fourth request, 3%3=0 (index) means runs 9090 instance
+ *  again when hit fifth request, 4%3=1 (index) means runs 9091 instance
+ *  again when hit six request, 5%3=2 (index) means runs 9092 instance
+ *
+ *  and continue this process.....
+ *
+ *  Just for understanding interview perespective...
+ *
+ *
+ * **/
