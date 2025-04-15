@@ -357,3 +357,99 @@ Good Morning , I am from Greet-API MS 9092 Hi, I am from Welcome API
  *
  *
  * **/
+
+//---------------- API Gateway  Routing and filtering implementation-----------------------------------
+
+//--------------- API Gateway Routing -----------------
+
+1.) some depenency used in pom.xml for api gateway
+
+Spring Web
+Eureka Discovery Client Spring Cloud Discovery
+
+Reactive Gateway Spring Cloud Routing (Reactive wala used kerna hai)
+Spring Boot Starter WebFlux maven (spring 3.0 used Reactive programming)
+
+web flux means
+in spring 2.0 used kerty ty pheley for  spring cloud gateway sy routng kerth ty
+
+2.) add config in application.properties files
+
+Note: don't need to add any anontation
+
+3.) start server one by one
+        discover server start
+        admin server start
+        zipkin start
+        Welcome api MS start
+        Greet api MS start
+        in the last, API Gateway MS start
+        and check
+        http://localhost:3333/welcome
+        result:
+   Good Morning , I am from Greet-API MS 9090 Hi, I am from Welcome API
+
+
+Note: you can also enable  server.port=9090 for Greet-api in application.properties
+if you don't want to make port dynamic using Environment
+
+/*
+suppose we want to check which port number running for greet-api without specify
+    * port in application.properties files such as server.port = server.port=9090
+    * then first make it server.port=9090 disabled it and used
+    * private Environment env;
+    --*/
+
+    * Routing: we have done now and let us learn to filter in api gateway
+
+
+/* ----------------Now to learn filter in API Gateway ----------------
+
+
+Jab UI s request send krengy to get resource data for some API..then
+we we send x-api-key/token alongwith headers from UI.
+
+ab hum api gateway per hi header k andar api key/token ko check/filter ker lengy
+if api/token is valid then further process otherwise give some error to client.
+
+way-1 results (MyFilter.java)
+http://localhost:3333/welcome with single headers such as
+
+X-API-KEY : zzzz
+Good Morning , I am from Greet-API MS 9090 Hi, I am from Welcome API
+
+and
+X-API-KEY : 123
+401 unauthorized error aa ye gi
+------------------------------------------------------
+
+way-2 results (MyFilter.java)
+ when you hit http://localhost:3333/welcome with two headers such as
+
+    username: krish
+    course: java
+
+
+* result show
+*
+* inside filter....
+username:[krish]
+course:[java]
+user-agent:[PostmanRuntime/7.43.3]
+accept:
+cache-control:[no-cache]
+postman-token:[660b804d-56af-4bb9-8d3c-0f7f10eda4d6]
+host:[localhost:3333]
+accept-encoding:[gzip, deflate, br]
+connection:[keep-alive]
+inside filter....
+username:[krish]
+course:[java]
+user-agent:[PostmanRuntime/7.43.3]
+accept:
+cache-control:[no-cache]
+postman-token:[5b14a373-e9ca-44d6-ba21-3ce0daed1e95]
+host:[localhost:3333]
+accept-encoding:[gzip, deflate, br]
+connection:[keep-alive]
+    */

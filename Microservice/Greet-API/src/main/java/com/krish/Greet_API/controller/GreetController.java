@@ -136,7 +136,22 @@ Good Morning , I am from Greet-API MS 9092 Hi, I am from Welcome API
  * For example:
  * * user hit suppose http:localhost:3333/welcome MS then we will configure
  * * in application.properties files such as  /welcome: Welcome-API
+ * ---------------------------- for example
+ * to Check API-Gateway project
+ * #Route config for welcome api
+ * spring.cloud.gateway.routes[0].id=welcome-api
+ * spring.cloud.gateway.routes[0].uri=lb://Welcome-API
+ * spring.cloud.gateway.routes[0].predicates[0]=Path=/welcome
  *
+ * # routing works always on key-value pair such as /welcome : Welcome-API
+ * #user hit http://localhost:3333/welcome
+ *
+ * #Route config for greet api
+ * spring.cloud.gateway.routes[1].id=greet-api
+ * spring.cloud.gateway.routes[1].uri=lb://Greet-API
+ * spring.cloud.gateway.routes[1].predicates[0]=Path=/greet
+ * spring.main.web-application-type=reactive
+ *----------------------------------------------
  * then it will look into  discovery server..hey you have registered Welcome-API
  * please route further to welcome api and In welcome api we used feign client which handle
  * internal load balancing manage automatically.

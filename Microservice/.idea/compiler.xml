@@ -9,12 +9,14 @@
         <module name="Greet-API" />
         <module name="Admin-Server" />
         <module name="Welcome-API" />
+        <module name="API-Gateway" />
         <module name="Service-Registry" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="API-Gateway" options="-parameters" />
       <module name="Admin-Server" options="-parameters" />
       <module name="Greet-API" options="-parameters" />
       <module name="Service-Registry" options="-parameters" />
