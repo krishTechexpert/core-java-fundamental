@@ -1,0 +1,69 @@
+version: '3.8' # Docker Compose file format version (3.8 works with modern Docker)
+
+# Services = containers that run as part of your app
+services: # only one application run such as docker demo so 1 service run only
+  app:  #Name of the first service (Spring Boot app)
+    build: . # Build the Docker image from the Dockerfile in the current directory
+    container_name: springboot-app # Custom name for the container (optional)
+    ports: # Expose port 8080 of container on host machine (host:container)
+      - "8080:8080" #port binding
+    depends_on:
+      - db # This app depends on the database container, so db starts first
+    environment: # Set environment variables used inside the container
+      SPRING_PROFILES_ACTIVE: prod # Use the "prod" profile in Spring Boot
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/dockerdb # MySQL DB URL (db = service name)
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Kiwtech@123
+    networks:
+      - app-network # Connect this container to a user-defined network
+
+  db:
+    image: mysql:8 #base sql image
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Kiwtech@123
+      MYSQL_DATABASE: dockerdb
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - app-network
+
+volumes:
+    mysql_data: # Named volume for MySQL data to persist across container restarts
+
+networks:
+    app-network:   # Custom network for app and db to communicate privately
+
+
+
+
+  #🧠 Summary (in plain English):
+  #You're defining two containers:
+  # 🧩 One for your Spring Boot app and
+  # 🧩 One for your MySQL database.
+
+  #They share a custom network (app-network) so they can talk to each other
+  #using service names (db).
+
+  #You're persisting the database data using a named volume (mysql_data).
+
+  #The app waits for the DB to start before it runs, using depends_on.
+
+# sudo docker compose up --build
+
+# to run in attached mode
+#  sudo docker compose up -d --build
+  
+ # to check data is stored in sql
+  
+  # docker exec -it mysql-db mysql -u root -p
+  
+  # it will show sql terminal in which you can write sql query
+
+
+# to check log
+
+#  docker compose logs -f app (working diector name)
